@@ -23,6 +23,7 @@ exports.getAllUsers = async (req, res) => {
 
 // Get single user by ID
 exports.getUserById = async (req, res) => {
+
   try {
     const user = await Registration.findById(req.params.id, '-password');
     if (!user) return res.status(404).json({ message: 'User not found' });
